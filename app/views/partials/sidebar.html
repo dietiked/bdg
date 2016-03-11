@@ -5,8 +5,9 @@
       <ul class="nav">
          <!-- END user info-->
          <!-- Iterates over all sidebar items-->
-         <li ng-repeat="page in pages"><a ng-href="{{page.link}}">{{page.description}}</a>
-           <ul ng-show="page.pages">
+         <li ng-repeat="page in pages">
+           <a ng-href="{{page.link}}">{{page.description}}</a>
+           <ul ng-show="page.pages" class="nav sidebar-subnav">
              <li ng-repeat="subpage in page.pages" class="sidebar-subnav">
                <a ng-href="{{subpage.link}}">{{subpage.description}}</a>
              </li>
