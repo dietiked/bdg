@@ -1,0 +1,19 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner" ng-controller="SidebarCtrl">
+   <nav sidebar="" sidebar-anyclick-close="" ng-class="{'show-scrollbar': app.layout.asideScrollbar}" class="sidebar">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <!-- END user info-->
+         <!-- Iterates over all sidebar items-->
+         <li ng-repeat="page in pages"><a ng-href="{{page.link}}">{{page.description}}</a>
+           <ul ng-show="page.pages">
+             <li ng-repeat="subpage in page.pages" class="sidebar-subnav">
+               <a ng-href="{{subpage.link}}">{{subpage.description}}</a>
+             </li>
+           </ul>
+         </li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

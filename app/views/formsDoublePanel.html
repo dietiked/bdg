@@ -1,0 +1,89 @@
+<h3>Double panel form</h3>
+
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Two single column forms</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form" role="form">
+          <div class="form-group">
+            <label class="control-label">Username</label>
+            <input type="text" placeholder="username" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Family name</label>
+            <input type="text" placeholder="family name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="control-label">First name</label>
+            <input type="text" placeholder="first name" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="panel-footer">
+        <p>Use multiple panels if forms are contextually different</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Two single column forms</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label">Number of pets</label>
+          <input type="number" placeholder="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Favorite color</label>
+          <input type="text" placeholder="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Do you like pizza?</label>
+          <input type="text" placeholder="" class="form-control">
+        </div>
+      </div>
+      <div class="panel-footer">
+        <p>These are complementary information to the left form</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Notes</h3>
+      </div>
+      <div class="panel-body">
+        <p>Forms are stacked and within panels</p>
+        <p>Modification of <code>.form-control</code>:</p>
+        <ul>
+          <li><samp>border-radius: 1px;</samp></li>
+          <li><samp>padding-left: 5px</samp></li>
+          <li><samp>padding-right: 5px</samp></li>
+        </ul>
+        <p>Inputs:</p>
+        <ul>
+          <li>Mandatory fields have a * on label</li>
+          <li>Border of mandatory fields is <samp>rba(40, 40, 40)</samp></li>
+          <li><code>input:focus</code> with <samp>border-color: rgb(255, 145, 0)</samp></li>
+          <li>No input with warning or success. Use only error fields</li>
+        </ul>
+        <p>Put save and cancel buttons in a div with class <code>.ba-form-buttons</code></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ba-form-buttons">
+  <button class="btn btn-default btn-lg btn-floating">Cancel</button>
+  <button class="btn btn-success btn-lg btn-floating">Save</button>
+</div>

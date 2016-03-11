@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {"description": "Dashboard", "link": "#/dashboard"},
+    {"description": "Typography", "link": "#/typography"},
+    {"description": "Colors", "link": "#/colors"},
+    {"description": "Buttons", "link": "#/buttons"},
+    {"description": "Icons", "link": "#/icons"},
+    {"description": "Panels", "link": "#/panels"},
+    {"description": "Tables", "link": "#/tables"},
+    {"description": "Forms", "link": "#/forms",
+      "pages": [
+        {"description": "Single column", "link": "#/formsSingleColumn"},
+        {"description": "Two columns", "link": "#/formsDoubleColumn"},
+        {"description": "Two panels", "link": "#/formsDoublePanel"}
+      ]
+    },
+    {"description": "Maps", "link": "#/maps"},
+    {"description": "Charts", "link": "#/charts"},
+    {"description": "Notifications", "link": "#/notifications"},
+    {"description": "Dialogs", "link": "#/dialogs"}
+  ]
+}

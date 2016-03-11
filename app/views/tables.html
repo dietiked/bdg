@@ -1,0 +1,81 @@
+<h3>Tables</h3>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-8">
+            <h3 class="panel-title">Table are within panels</h3>
+          </div>
+          <div class="col-md-4">
+            <input class="form-control pull-right input-sm" type="search" ng-model="search" placeholder="search...">
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table id="datatable1" class="table table-hover table-striped" role="grid">
+          <thead>
+            <tr>
+              <th class="sorting">Rank</th>
+              <th class="sorting">Golfer</th>
+              <th class="sorting">Country</th>
+              <th class="sorting">Master</th>
+              <th class="sorting">US Open</th>
+              <th class="sorting">The Open</th>
+              <th class="sorting">PGA</th>
+              <th class="sorting">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="winner in winners | filter:search">
+              <td>{{winner.rank}}</td>
+              <td>{{winner.name}}</td>
+              <td>{{winner.country}}</td>
+              <td>{{winner.master}}</td>
+              <td>{{winner.usopen}}</td>
+              <td>{{winner.theopen}}</td>
+              <td>{{winner.pga}}</td>
+              <td>{{winner.total}}</td>
+              <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Notes</h3>
+      </div>
+      <div class="panel-body">
+        <p>Table rules
+          <ul>
+            <li>Use Datatable</li>
+            <li>Display all entries (no pagination)</li>
+            <li>Columns are sortable</li>
+            <li>Search input
+              <ul>
+                <li>within <code>.panel-heading</code> div</li>
+                <li>right alignment with <code>.pull-right</code></li>
+                <li>decrease size with <code>.input-sm</code></li>
+              </ul>
+              </li>
+          </ul>
+          <li>Actions
+            <ul>
+              <li>Click on row = Show line details</li>
+              <li>Click on <i class="fa fa-edit"></i> = show edit form</li>
+              <li>Click on <i class="fa fa-trash"></i> = show modal to confirm delete (if possible)</li>
+            </ul>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
