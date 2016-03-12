@@ -1,6 +1,11 @@
 
 var bartoPartials = angular.module('bartoPartials', []);
-bartoPartials.controller('EmptyCtrl', ['$scope', function($scope){}]);
+bartoPartials.controller('MainCtrl', ['$scope', function($scope){
+  $scope.app = {layout: {isCollapsed: false}};
+}]);
+
+bartoPartials.controller('EmptyCtrl', ['$scope', function($scope){
+}]);
 bartoPartials.controller('TablesCtrl', ['$scope', '$timeout', function($scope, $timeout){
   $scope.winners = [
     {'rank': 1, 'name': 'Jack Nicklaus', 'country': 'USA', 'master': 6, 'usopen': 4, 'theopen': 3, 'pga': 4, 'total': 18},
@@ -80,6 +85,10 @@ barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		}).
     when('/formsDoublePanel', {
 			templateUrl: 'app/views/formsDoublePanel.html',
+			controller: 'EmptyCtrl'
+		}).
+    when('/maps', {
+			templateUrl: 'app/views/maps.html',
 			controller: 'EmptyCtrl'
 		}).
 		otherwise({

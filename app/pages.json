@@ -1,6 +1,6 @@
 {
   "pages": [
-    {"description": "Dashboard", "link": "#/dashboard"},
+    {"description": "Dashboard", "link": "#/dashboard", "icon": "icon-speedometer"},
     {"description": "Typography", "link": "#/typography"},
     {"description": "Colors", "link": "#/colors"},
     {"description": "Buttons", "link": "#/buttons"},

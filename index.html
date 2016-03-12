@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Barto UI Developer Guidelines</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <script src="app/vendor/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="app/vendor/angular/angular.min.js" type="text/javascript"></script>
     <script src="app/vendor/angular/angular-route.min.js" type="text/javascript"></script>
@@ -15,8 +15,12 @@
     <link rel="stylesheet" href="app/css/bootstrap.css">
     <link rel="stylesheet" href="app/css/app.css">
     <link rel="stylesheet" href="app/css/theme-barto.css">
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet'>
+
   </head>
-  <body class="layout-fixed">
+  <body ng-controller="MainCtrl" class="layout-fixed aside-toggle" ng-class="{'aside-collapsed': app.layout.isCollapsed}">
     <div class="wrapper">
 
       <header ng-include="'app/views/partials/top-navbar.html'" class="topnavbar-wrapper"></header>

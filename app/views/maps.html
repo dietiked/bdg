@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Full map</h3>
+      </div>
+      <div class="panel-body">
+        <div class="map" id='fullmap'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Map with information</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div id='halfmap' class="map"></div>
+          </div>
+          <div class="col-md-6">
+            <h5>Additional information</h5>
+            <p>Lat: <span id="lat"></span></p>
+            <p>Lng: <span id="lng"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGlldGlrZWQiLCJhIjoiMDkzMTUyZjg0NzY3ZjBjYzk1NTZhZGZkZjM0NWE5OTUifQ.ZQGLwWRc3trVsw7PzN2ovQ';
+  var fullmap = new mapboxgl.Map({
+      container: 'fullmap', // container id
+      //style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+      style: 'mapbox://styles/mapbox/emerald-v8',
+      center: [8.682913, 47.447806], // starting position
+      zoom: 12 // starting zoom
+  });
+  var halfmap = new mapboxgl.Map({
+      container: 'halfmap', // container id
+      //style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+      style: 'mapbox://styles/mapbox/emerald-v8',
+      center: [8.682913, 47.447806], // starting position
+      zoom: 12 // starting zoom
+  });
+  halfmap.on('mousemove', function (e) {
+    $('#lat').text(JSON.stringify(e.lngLat.lat));
+    $('#lng').text(JSON.stringify(e.lngLat.lng));
+  });
+
+</script>
