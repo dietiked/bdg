@@ -185,6 +185,7 @@ a:hover {
 
 .btn {
   border: none;
+  text-transform: uppercase;
 }
 .btn-default {
   background-color: #F5F5F5;
@@ -208,6 +209,15 @@ blockquote {
   border-radius: 1px;
   border: none;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.panel-heading {
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+.panel-primary .panel-heading {
+  background-color: #FF9100;
 }
 
 .form-control {
@@ -305,4 +315,21 @@ input[type="password"]:focus {
   border-bottom: none;
   color: inherit;
   background-color: inherit;
+}
+
+.c-checkbox:hover span, .c-radio:hover span {
+  border-color: #FF9100;
+}
+
+.c-checkbox input[type=checkbox]:checked + span,
+.c-radio input[type=checkbox]:checked + span,
+.c-checkbox input[type=radio]:checked + span,
+.c-radio input[type=radio]:checked + span {
+  border-color: #FF9100;
+  background-color: #FF9100;
+}
+
+.c-checkbox input[type=radio]:checked+span:before,
+.c-radio input[type=radio]:checked+span:before {
+  color: white;
 }

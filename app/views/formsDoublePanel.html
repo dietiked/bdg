@@ -20,6 +20,14 @@
             <label class="control-label">First name</label>
             <input type="text" placeholder="first name" class="form-control">
           </div>
+          <div class="form-group">
+            <label class="control-label">Confirm *</label>
+            <div class="checkbox c-checkbox">
+              <label>
+                <input type="checkbox"> <span class="fa fa-check"></span>I confirm, that that's me
+              </label>
+            </div>
+          </div>
         </form>
       </div>
       <div class="panel-footer">
@@ -39,12 +47,26 @@
           <input type="number" placeholder="" class="form-control">
         </div>
         <div class="form-group">
-          <label class="control-label">Favorite color</label>
+          <label class="control-label">Do you like pizza?</label>
           <input type="text" placeholder="" class="form-control">
         </div>
         <div class="form-group">
-          <label class="control-label">Do you like pizza?</label>
-          <input type="text" placeholder="" class="form-control">
+          <label class="control-label">What is your favorite colour?</label>
+          <div class="radio c-radio">
+            <label>
+              <input type="radio" value="red" name="fcolor"> <span class="fa fa-circle"></span>Red
+            </label>
+          </div>
+          <div class="radio c-radio">
+            <label>
+              <input type="radio" value="green" name="fcolor"> <span class="fa fa-circle"></span>Green
+            </label>
+          </div>
+          <div class="radio c-radio">
+            <label>
+              <input type="radio" value="blue" name="fcolor"> <span class="fa fa-circle"></span>Blue
+            </label>
+          </div>
         </div>
       </div>
       <div class="panel-footer">
@@ -53,35 +75,6 @@
     </div>
   </div>
 </div>
-
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Notes</h3>
-      </div>
-      <div class="panel-body">
-        <p>Forms are stacked and within panels</p>
-        <p>Modification of <code>.form-control</code>:</p>
-        <ul>
-          <li><samp>border-radius: 1px;</samp></li>
-          <li><samp>padding-left: 5px</samp></li>
-          <li><samp>padding-right: 5px</samp></li>
-        </ul>
-        <p>Inputs:</p>
-        <ul>
-          <li>Mandatory fields have a * on label</li>
-          <li>Border of mandatory fields is <samp>rba(40, 40, 40)</samp></li>
-          <li><code>input:focus</code> with <samp>border-color: rgb(255, 145, 0)</samp></li>
-          <li>No input with warning or success. Use only error fields</li>
-        </ul>
-        <p>Put save and cancel buttons in a div with class <code>.ba-form-buttons</code></p>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <div class="ba-form-buttons">
   <button class="btn btn-default btn-lg btn-floating">Cancel</button>

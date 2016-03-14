@@ -27,6 +27,43 @@ bartoPartials.controller('TablesCtrl', ['$scope', '$timeout', function($scope, $
     });
   });
 }]);
+
+bartoPartials.controller('MapsCtrl', ['$scope', function($scope){
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGlldGlrZWQiLCJhIjoiMDkzMTUyZjg0NzY3ZjBjYzk1NTZhZGZkZjM0NWE5OTUifQ.ZQGLwWRc3trVsw7PzN2ovQ';
+  var fullmap = new mapboxgl.Map({
+      container: 'fullmap', // container id
+      //style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+      style: 'mapbox://styles/mapbox/emerald-v8',
+      center: [8.682913, 47.447806], // starting position
+      zoom: 12 // starting zoom
+  });
+  var halfmap = new mapboxgl.Map({
+      container: 'halfmap', // container id
+      //style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+      style: 'mapbox://styles/mapbox/emerald-v8',
+      center: [8.682913, 47.447806], // starting position
+      zoom: 13 // starting zoom
+  });
+  halfmap.on('mousemove', function (e) {
+    $('#lat').text(JSON.stringify(e.lngLat.lat));
+    $('#lng').text(JSON.stringify(e.lngLat.lng));
+  });
+
+  $scope.flightTo = function(location) {
+    var coordinates;
+    if (location == 'identitas') {
+      coordinates = [7.4629176, 46.9694442];
+    } else if (location == 'agridea') {
+      coordinates = [8.682913, 47.447806];
+    }
+    halfmap.flyTo({
+        center: coordinates
+    });
+  }
+
+}]);
+
+
 bartoPartials.controller('DashboardCtrl', ['$scope', '$http', function($scope, $http){
    $http.get('app/pages.json')
        .then(function(result){
@@ -89,7 +126,7 @@ barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		}).
     when('/maps', {
 			templateUrl: 'app/views/maps.html',
-			controller: 'EmptyCtrl'
+			controller: 'MapsCtrl'
 		}).
 		otherwise({
 			redirectTo: '/dashboard'
