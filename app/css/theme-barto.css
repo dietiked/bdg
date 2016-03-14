@@ -334,8 +334,11 @@ input[type="password"]:focus {
 }
 
 .c-checkbox input[type=checkbox]:checked + span,
+.c-checkbox input[type=radio]:checked + span {
+  border-color: #FF9100;
+  background-color: #FF9100;  
+}
 .c-radio input[type=checkbox]:checked + span,
-.c-checkbox input[type=radio]:checked + span,
 .c-radio input[type=radio]:checked + span {
   border-color: #FF9100;
   background-color: white;
