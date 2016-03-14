@@ -1,16 +1,10 @@
-<h3>Barto Coding Guidelines</h3>
-<div class="row">
-  <div class="col-md-12">
-    <p>Welcome to the UI/UX coding guidelines for Barto. Please choose a topic.
-    </p>
-  </div>
-</div>
+<breadcrumb titles="[]"></breadcrumb>
 <div class="row">
   <div class="col-sm-12 col-md-8">
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4" ng-repeat="page in pages">
         <a ng-href="{{page.link}}">
-          <div class="ba-tile" >
+          <div class="ba-tile" ng-class="{'inactive': page.inactive}">
             <div class="ba-tile-content">
               {{page.description}}
             </div>
@@ -25,16 +19,15 @@
         <h3 class="panel-title">Developer Guidelines</h3>
       </div>
       <div class="panel-body">
+        <p>Welcome to the developer user guidelines.</p>
         <p>Please remember, that developer guidelines are still a work in progress. Here some open points:</p>
           <ul>
-            <li>Sidebar</li>
             <li>Navigation bar</li>
             <li>Icons</li>
             <li>Charts</li>
             <li>Dialogs</li>
+            <li>Notifications</li>
           </ul>
-      </div>
-      <div class="panel-footer">
       </div>
     </div>
   </div>

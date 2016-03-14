@@ -14,9 +14,9 @@
         {"description": "Two panels", "link": "#/formsDoublePanel"}
       ]
     },
+    {"description": "Charts", "link": "#/charts", "inactive": true},
     {"description": "Maps", "link": "#/maps"},
-    {"description": "Charts", "link": "#/charts"},
-    {"description": "Notifications", "link": "#/notifications"},
-    {"description": "Dialogs", "link": "#/dialogs"}
+    {"description": "Notifications", "link": "#/notifications", "inactive": true},
+    {"description": "Dialogs", "link": "#/dialogs", "inactive": true}
   ]
 }

@@ -63,7 +63,6 @@ bartoPartials.controller('MapsCtrl', ['$scope', function($scope){
 
 }]);
 
-
 bartoPartials.controller('DashboardCtrl', ['$scope', '$http', function($scope, $http){
    $http.get('app/pages.json')
        .then(function(result){
@@ -76,6 +75,21 @@ bartoPartials.controller('SidebarCtrl', ['$scope', '$http', function($scope, $ht
           $scope.pages = result.data.pages;
         });
 }]);
+
+bartoPartials
+.directive('breadcrumb', [ function() {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			'titles': '=',
+		},
+		templateUrl: 'app/views/breadcrumb.html',
+		link: function(scope, element, attrs) {
+		}
+	};
+}])
+
 
 var barto = angular.module('barto', ['ngRoute', 'bartoPartials', 'datatables'], function() {});
 barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

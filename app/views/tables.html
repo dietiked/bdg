@@ -1,4 +1,4 @@
-<h3>Tables</h3>
+<breadcrumb titles="[{name: 'Tables', link:'#/tables'}]"></breadcrumb>
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
@@ -13,6 +13,9 @@
         </div>
       </div>
       <div class="panel-body">
+        <button class="btn btn-primary btn-sm">Add player</button>
+        <button class="btn btn-primary btn-sm">Add major</button>
+        <button class="btn btn-primary btn-sm">Add major result</button>
         <table id="datatable1" class="table table-hover table-striped" role="grid">
           <thead>
             <tr>
@@ -37,7 +40,7 @@
               <td>{{winner.theopen}}</td>
               <td>{{winner.pga}}</td>
               <td>{{winner.total}}</td>
-              <td><a href="#"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="#"><i class="fa fa-trash"></i></a></td>
+              <td><a href="#"><i class="fa fa-edit fa-lg"></i></a>&nbsp;&nbsp;<a href="#"><i class="fa fa-trash fa-lg"></i></a></td>
             </tr>
           </tbody>
         </table>

@@ -163,7 +163,7 @@ body,
   Barto
  ========================================================================== */
 body {
-  font-family: "Lato", "Source Sans pro", sans-serif;
+  font-family: "Open sans", "Source Sans pro", sans-serif;
   color: #424242;
 }
 
@@ -185,7 +185,7 @@ a:hover {
 
 .btn {
   border: none;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .btn-default {
   background-color: #F5F5F5;
@@ -193,8 +193,11 @@ a:hover {
 .btn-default:hover {
   background-color: #e6e3e3;
 }
-.btn-success {
-  background-color: #5BBF38;
+.btn-primary {
+  background-color: #FF9100;
+}
+.btn-primary:hover {
+  background-color: #99843D;
 }
 
 blockquote {
@@ -257,9 +260,14 @@ blockquote {
 .ba-tile {
   background-color: #FF9100;
   color: white;
-  font-size: 24px;
+  font-size: 21px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   min-height: 100px;
+}
+.ba-tile.inactive {
+  background-color: #d5d5d5;
+  color: #656565 ;
+  box-shadow: none;
 }
 
 .ba-color-box-descr,
@@ -287,6 +295,10 @@ blockquote {
 .ba-color-box-wrapper.blacksmooth {
   background-color: rgba(101, 101, 101, 1);
   color: white;
+}
+.ba-color-box-wrapper.blacklight {
+  background-color: rgba(213, 213, 213, 1);
+  color: black;
 }
 .ba-color-box-wrapper.background {
   background-color: rgba(245, 245, 245, 1);
@@ -326,10 +338,52 @@ input[type="password"]:focus {
 .c-checkbox input[type=radio]:checked + span,
 .c-radio input[type=radio]:checked + span {
   border-color: #FF9100;
-  background-color: #FF9100;
+  background-color: white;
 }
 
 .c-checkbox input[type=radio]:checked+span:before,
 .c-radio input[type=radio]:checked+span:before {
-  color: white;
+  color: #FF9100;
+}
+
+.topnavbar .navbar-header .brand-logo > img,
+.topnavbar .navbar-header .brand-logo-collapsed > img {
+  margin-left: 5px;
+}
+
+.wrapper > section,
+.wrapper > footer {
+  margin-left: 0px;
+}
+
+.ba-breadcrumb-wrapper {
+  position: fixed;
+  top: 55px;
+  left: 0px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.breadcrumb {
+  background-color: #F5F5F5;
+  color: black;
+  font-weight: bold;
+}
+.breadcrumb > li + li:before {
+  color: black;
+  font-weight: normal;
+}
+
+.breadcrumb a {
+  font-weight: normal;;
+  color: black;
+}
+
+.breadcrumb li:last-child a {
+  font-weight: bold;;
+}
+
+.content-wrapper {
+  border-top: none;
+  margin-top: 80px;
 }

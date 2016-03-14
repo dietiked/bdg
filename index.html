@@ -2,8 +2,8 @@
 <html ng-app="barto" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Barto UI Developer Guidelines</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <title>UI/UX Developer Guidelines</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+sans:400,700,300' rel='stylesheet' type='text/css'>
     <script src="app/vendor/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="app/vendor/angular/angular.min.js" type="text/javascript"></script>
     <script src="app/vendor/angular/angular-route.min.js" type="text/javascript"></script>
@@ -20,14 +20,13 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet'>
 
   </head>
-  <body ng-controller="MainCtrl" class="layout-fixed aside-toggle" ng-class="{'aside-collapsed': app.layout.isCollapsed}">
-    <div class="wrapper">
+  <body ng-controller="MainCtrl" class="layout-fixed">
+    <div class="wrapper" data-ui-view>
 
       <header ng-include="'app/views/partials/top-navbar.html'" class="topnavbar-wrapper"></header>
-      <aside ng-include="'app/views/partials/sidebar.html'" class="aside"></aside>
 
       <section>
-        <div ng-view class="content-wrapper">
+        <div class="content-wrapper" data-ui-view data-ng-view >
         </div>
       </section>
 
