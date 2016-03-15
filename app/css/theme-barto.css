@@ -113,7 +113,7 @@ a:hover {
 .btn-primary:hover {
   background-color: #99843d;
 }
-.btn-primary:active {
+.btn-primary:active:hover {
   background-color: #99843d;
 }
 blockquote {
