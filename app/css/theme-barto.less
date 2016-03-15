@@ -1,10 +1,21 @@
+// out: theme-barto.css
+@color-main: rgba(255, 145, 0, 1);
+@color-accentdark: rgba(153, 132, 61, 1);
+@color-accentlight: rgba(204, 163, 20, 1);
+@color-black: rgba(66, 66, 66, 1);
+@color-blacksmooth: rgba(101, 101, 101, 1);
+@color-blacklight: rgba(213, 213, 213, 1);
+@color-background: rgba(245, 245, 245, 1);
+
+
 /* ========================================================================
    Component: layout
  ========================================================================== */
 body,
 .wrapper > section {
-  background-color: #f5f5f5;
+  background-color: @color-background;
 }
+
 /* ========================================================================
    Component: top-navbar
  ========================================================================== */
@@ -46,7 +57,7 @@ body,
   color: #ffffff;
 }
 .topnavbar .nav-wrapper {
-  background-color: #323232;
+  background-color: rgba(50,50,50,1);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff23b7e5', endColorstr='#ff51c6ea', GradientType=1);
 }
@@ -80,80 +91,93 @@ body,
  ========================================================================== */
 body {
   font-family: "Open sans", "Source Sans pro", sans-serif;
-  color: #424242;
+  color: @color-black;
 }
-a:link,
-a:active,
-a:visited {
-  color: #ff9100;
+
+a:link, a:active, a:visited {
+  color: @color-main;
 }
+
 a:hover {
   text-decoration: none;
-  color: #99843d;
+  color: @color-accentdark;
 }
+
 .map {
   width: 100%;
   height: 400px;
   margin: 0px;
   padding: 0px;
 }
+
 .btn {
   border: none;
   /*text-transform: uppercase;*/
 }
 .btn-default {
-  background-color: #f5f5f5;
+  background-color: @color-background;
 }
 .btn-default:hover {
   background-color: #e6e3e3;
 }
 .btn-primary {
-  background-color: #ff9100;
+  background-color: @color-main;
 }
 .btn-primary:hover {
-  background-color: #99843d;
+  background-color: @color-accentdark;
 }
 .btn-primary:active {
-  background-color: #99843d;
+  background-color: @color-accentdark;
 }
+
 blockquote {
-  border-left-color: #ff9100;
+  border-left-color: rgba(255, 145, 0, 1);
 }
+
 .btn {
   border-radius: 0px;
 }
+
 .panel {
   border-radius: 1px;
   border: none;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .panel-heading {
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
 }
+
 .panel-primary .panel-heading {
   background-color: #FF9100;
 }
+
 .form-control {
   border-radius: 1px;
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .form-control[disabled] {
-  background-color: #f5f5f5;
+  background-color: rgb(245, 245, 245);
 }
+
 .ba-form-buttons {
   position: fixed;
   right: 10px;
   bottom: 10px;
 }
+
 .btn-floating {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   margin-right: 10px;
 }
+
 .btn-floating:last-child {
   margin-right: 0px;
 }
+
 .ba-color-box-wrapper,
 .ba-tile {
   display: table;
@@ -162,6 +186,7 @@ blockquote {
   padding: 10px;
   margin-bottom: 20px;
 }
+
 .ba-tile {
   background-color: #FF9100;
   color: white;
@@ -174,6 +199,7 @@ blockquote {
   color: #656565 ;
   box-shadow: none;
 }
+
 .ba-color-box-descr,
 .ba-tile-content {
   display: table-cell;
@@ -181,56 +207,62 @@ blockquote {
   text-align: center;
 }
 .ba-color-box-wrapper.main {
-  background-color: #ff9100;
+  background-color: rgba(255, 145, 0, 1);
   color: white;
 }
 .ba-color-box-wrapper.accentdark {
-  background-color: #99843d;
+  background-color: rgba(153, 132, 61, 1);
   color: white;
 }
 .ba-color-box-wrapper.accentlight {
-  background-color: #cca314;
+  background-color: rgba(204, 163, 20, 1);
   color: white;
 }
 .ba-color-box-wrapper.blackprimary {
-  background-color: #424242;
+  background-color: rgba(66, 66, 66, 1);
   color: white;
 }
 .ba-color-box-wrapper.blacksmooth {
-  background-color: #656565;
+  background-color: rgba(101, 101, 101, 1);
   color: white;
 }
 .ba-color-box-wrapper.blacklight {
-  background-color: #d5d5d5;
+  background-color: rgba(213, 213, 213, 1);
   color: black;
 }
 .ba-color-box-wrapper.background {
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 1);
   color: #424242;
 }
 input[type="text"].ba-mandatory,
 input[type="number"].ba-mandatory,
 input[type="email"].ba-mandatory,
-input[type="password"].ba-mandatory input[type="search"].ba-mandatory {
-  border-color: #282828;
+input[type="password"].ba-mandatory
+input[type="search"].ba-mandatory
+{
+  border-color: rgb(40, 40, 40);
 }
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus {
-  border-color: #ff9100;
+  border-color: rgb(255, 145, 0);
 }
+
 .content-wrapper > h3,
-.content-wrapper > .content-heading {
+.content-wrapper >
+.content-heading {
   border-bottom: none;
   color: inherit;
   background-color: inherit;
 }
-.c-checkbox:hover span,
-.c-radio:hover span {
+
+.c-checkbox:hover span, .c-radio:hover span {
   border-color: #FF9100;
 }
+
 .c-checkbox input[type=checkbox]:checked + span,
 .c-checkbox input[type=radio]:checked + span {
   border-color: #FF9100;
@@ -241,18 +273,22 @@ input[type="password"]:focus {
   border-color: #FF9100;
   background-color: white;
 }
-.c-checkbox input[type=radio]:checked + span:before,
-.c-radio input[type=radio]:checked + span:before {
+
+.c-checkbox input[type=radio]:checked+span:before,
+.c-radio input[type=radio]:checked+span:before {
   color: #FF9100;
 }
+
 .topnavbar .navbar-header .brand-logo > img,
 .topnavbar .navbar-header .brand-logo-collapsed > img {
   margin-left: 5px;
 }
+
 .wrapper > section,
 .wrapper > footer {
   margin-left: 0px;
 }
+
 .ba-breadcrumb-wrapper {
   position: fixed;
   top: 55px;
@@ -260,6 +296,7 @@ input[type="password"]:focus {
   width: 100%;
   z-index: 1000;
 }
+
 .breadcrumb {
   background-color: #F5F5F5;
   color: black;
@@ -269,13 +306,16 @@ input[type="password"]:focus {
   color: black;
   font-weight: normal;
 }
+
 .breadcrumb a {
-  font-weight: normal;
+  font-weight: normal;;
   color: black;
 }
+
 .breadcrumb li:last-child a {
-  font-weight: bold;
+  font-weight: bold;;
 }
+
 .content-wrapper {
   border-top: none;
   margin-top: 80px;
