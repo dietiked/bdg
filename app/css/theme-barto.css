@@ -107,7 +107,8 @@ a:hover {
 .btn-default:hover {
   background-color: #e6e3e3;
 }
-.btn-primary {
+.btn-primary,
+.btn-primary:focus {
   background-color: #ff9100;
 }
 .btn-primary:hover {
