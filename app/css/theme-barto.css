@@ -91,6 +91,15 @@ a:hover {
   text-decoration: none;
   color: #99843d;
 }
+table a:link,
+table a:active,
+table a:visited {
+  color: #424242;
+}
+table a:hover {
+  text-decoration: none;
+  color: #ff9100;
+}
 .map {
   width: 100%;
   height: 400px;
