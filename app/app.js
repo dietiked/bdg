@@ -69,6 +69,11 @@ bartoPartials.controller('DashboardCtrl', ['$scope', '$http', function($scope, $
           $scope.pages = result.data.pages;
         });
 }]);
+bartoPartials.controller('DialogsCtrl', ['$scope', 'ngDialog', function($scope, ngDialog){
+  $scope.deleteDialog = function () {
+      ngDialog.open({ template: 'deleteDialog', className: 'ngdialog-theme-default' });
+  };
+}]);
 bartoPartials.controller('SidebarCtrl', ['$scope', '$http', function($scope, $http){
    $http.get('app/pages.json')
        .then(function(result){
@@ -91,7 +96,7 @@ bartoPartials
 }])
 
 
-var barto = angular.module('barto', ['ngRoute', 'bartoPartials', 'datatables'], function() {});
+var barto = angular.module('barto', ['ngRoute', 'bartoPartials', 'datatables', 'ngDialog'], function() {});
 barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider.
     when('/dashboard', {
@@ -141,6 +146,10 @@ barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     when('/maps', {
 			templateUrl: 'app/views/maps.html',
 			controller: 'MapsCtrl'
+		}).
+    when('/dialogs', {
+			templateUrl: 'app/views/dialogs.html',
+			controller: 'DialogsCtrl'
 		}).
 		otherwise({
 			redirectTo: '/dashboard'
