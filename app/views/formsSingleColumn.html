@@ -1,6 +1,6 @@
 <breadcrumb titles="[{name: 'Forms', link:'#/forms'}, {name: 'Single column', link:'#/forms/formsSingleColumn'}]"></breadcrumb>
 <div class="row">
-  <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Single column form</h3>
@@ -18,6 +18,16 @@
           <div class="form-group">
             <label class="control-label">Disabled</label>
             <input type="text" placeholder="Change backgroud color to rgb(245, 245, 245)" class="form-control" disabled>
+          </div>
+          <div class="form-group">
+            <label class="control-label">UI Select</label>
+            <ui-select ng-model="formSelection.selected" theme="selectize" style="width: 300px;" title="Choose a golfer">
+                <ui-select-match placeholder="Select or search a golf player...">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="player in winners | filter: $select.search">
+                  <span ng-bind-html="trustAsHtml((player.name | highlight: $select.search))"></span>
+                  <small ng-bind-html="trustAsHtml((player.country | highlight: $select.search))"></small>
+                </ui-select-choices>
+            </ui-select>
           </div>
           <div class="form-group has-error">
             <label class="control-label">Input with error</label>
