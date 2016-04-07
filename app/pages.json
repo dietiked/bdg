@@ -16,7 +16,7 @@
     },
     {"description": "Charts", "link": "#/charts", "inactive": true},
     {"description": "Maps", "link": "#/maps"},
-    {"description": "Notifications", "link": "#/notifications", "inactive": true},
+    {"description": "Notifications", "link": "#/notifications", "inactive": false},
     {"description": "Dialogs", "link": "#/dialogs", "inactive": false}
   ]
 }

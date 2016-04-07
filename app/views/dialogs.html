@@ -9,8 +9,8 @@
       <div class="panel-body">
         <p>We have three types of dialogs:</p>
         <button class="btn btn-primary" ng-click="deleteDialog()">Delete something</button>
-        <button class="btn btn-primary">Confirm something</button>
-        <button class="btn btn-primary">Get some information</button>
+        <button class="btn btn-primary" ng-click="confirmDialog()">Confirm something</button>
+        <button class="btn btn-primary" ng-click="infoDialog()">Get some information</button>
       </div>
     </div>
   </div>
@@ -19,9 +19,30 @@
 <script type="text/ng-template" id="deleteDialog">
     <h2>Delete dialog</h2>
     <p>Inform user that you're deleting something</p>
-    <p>Put cancel button on the left and delete button on the right. So we reduce the risk of wrong clicks.</p>
+    <p>Put cancel button on the left and delete button on the right. So we reduce the risk of wrong clicks. Delete button is red.</p>
     <div class="ngdialog-buttons">
       <button class="btn btn-danger pull-right" ng-click="closeThisDialog('Delete')"><i class="fa fa-trash"></i>&nbsp;Delete</button>
       <button class="btn btn-default pull-left" ng-click="closeThisDialog('Cancel')">Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="confirmDialog">
+    <h2>Confirm dialog</h2>
+    <p>Ask user to confirm an action</p>
+    <p>Put cancel button on the left and confirm button on the right. Confirm button is orange.</p>
+    <p>Example: do you want to send this data to your neighbour?</p>
+    <div class="ngdialog-buttons">
+      <button class="btn btn-primary pull-right" ng-click="closeThisDialog('Confirm')">Yes, please</button>
+      <button class="btn btn-default pull-left" ng-click="closeThisDialog('Cancel')">No, thanks</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="infoDialog">
+    <h2>Information dialog</h2>
+    <p>Inform user about something</p>
+    <p>There is just one button to close dialog. Ok button is light gray.</p>
+    <p>Example: a blue whale can grow up to 30 metres.</p>
+    <div class="ngdialog-buttons">
+      <button class="btn btn-default pull-right" ng-click="closeThisDialog('Cancel')">Ok</button>
     </div>
 </script>

@@ -73,6 +73,14 @@ bartoPartials.controller('DialogsCtrl', ['$scope', 'ngDialog', function($scope, 
   $scope.deleteDialog = function () {
       ngDialog.open({ template: 'deleteDialog', className: 'ngdialog-theme-default' });
   };
+  $scope.confirmDialog = function () {
+      ngDialog.open({ template: 'confirmDialog', className: 'ngdialog-theme-default' });
+  };
+  $scope.infoDialog = function () {
+      ngDialog.open({ template: 'infoDialog', className: 'ngdialog-theme-default' });
+  };
+}]);
+bartoPartials.controller('NotificationsCtrl', ['$scope', function($scope){
 }]);
 bartoPartials.controller('SidebarCtrl', ['$scope', '$http', function($scope, $http){
    $http.get('app/pages.json')
@@ -150,6 +158,10 @@ barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
     when('/dialogs', {
 			templateUrl: 'app/views/dialogs.html',
 			controller: 'DialogsCtrl'
+		}).
+    when('/notifications', {
+			templateUrl: 'app/views/notifications.html',
+			controller: 'NotificationsCtrl'
 		}).
 		otherwise({
 			redirectTo: '/dashboard'
