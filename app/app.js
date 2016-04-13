@@ -6,7 +6,7 @@ bartoPartials.controller('MainCtrl', ['$scope', function($scope){
 
 bartoPartials.controller('EmptyCtrl', ['$scope', function($scope){
 }]);
-bartoPartials.controller('TablesCtrl', ['$scope', '$timeout', function($scope, $timeout){
+bartoPartials.controller('TablesCtrl', ['$scope', '$timeout', '$sce', function($scope, $timeout, $sce){
   $scope.winners = [
     {'rank': 1, 'name': 'Jack Nicklaus', 'country': 'USA', 'master': 6, 'usopen': 4, 'theopen': 3, 'pga': 4, 'total': 18},
     {'rank': 2, 'name': 'Tiger Woods', 'country': 'USA', 'master': 4, 'usopen': 3, 'theopen': 3, 'pga': 4, 'total': 14},
@@ -26,6 +26,11 @@ bartoPartials.controller('TablesCtrl', ['$scope', '$timeout', function($scope, $
       bFilter: false
     });
   });
+  // For forms
+  $scope.formSelection = {selected:''};
+  $scope.trustAsHtml = function(value) {
+    return $sce.trustAsHtml(value);
+  };
 }]);
 
 bartoPartials.controller('MapsCtrl', ['$scope', function($scope){
@@ -80,7 +85,13 @@ bartoPartials.controller('DialogsCtrl', ['$scope', 'ngDialog', function($scope, 
       ngDialog.open({ template: 'infoDialog', className: 'ngdialog-theme-default' });
   };
 }]);
-bartoPartials.controller('NotificationsCtrl', ['$scope', function($scope){
+bartoPartials.controller('NotificationsCtrl', ['$scope', 'toaster', function($scope, toaster){
+  $scope.errorNotififcation = function() {
+    toaster.pop('error', "Error", "There was an error while performing this operation. Please try again.");
+  }
+  $scope.successNotification = function() {
+    toaster.pop('success', "Success", "This operation was successfully completed");
+  }
 }]);
 bartoPartials.controller('SidebarCtrl', ['$scope', '$http', function($scope, $http){
    $http.get('app/pages.json')
@@ -104,7 +115,7 @@ bartoPartials
 }])
 
 
-var barto = angular.module('barto', ['ngRoute', 'bartoPartials', 'datatables', 'ngDialog'], function() {});
+var barto = angular.module('barto', ['ngRoute', 'bartoPartials', 'datatables', 'ngDialog', 'toaster', 'ui.select'], function() {});
 barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider.
     when('/dashboard', {
@@ -141,7 +152,7 @@ barto.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
 		}).
     when('/formsSingleColumn', {
 			templateUrl: 'app/views/formsSingleColumn.html',
-			controller: 'EmptyCtrl'
+			controller: 'TablesCtrl'
 		}).
     when('/formsDoubleColumn', {
 			templateUrl: 'app/views/formsDoubleColumn.html',

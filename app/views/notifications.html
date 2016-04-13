@@ -9,9 +9,13 @@
       <div class="panel-body">
         <p>Use notifications to inform users about the result of background actions. Typically,
           this involves asyncronous/server data manipulations like delete, insert or update.</p>
-        <button class="btn btn-primary" ng-click="">Error notification</button>
-        <button class="btn btn-primary" ng-click="">Success notification</button>
+        <p>Please, use <a href="https://github.com/jirikavi/AngularJS-Toaster" target="_blank">AngularJS Toaster</a> (as part of Angle)
+        and set timeout to 0, so that user must actively dismiss notification.</p>
+        <button class="btn btn-primary" ng-click="errorNotififcation()">Error notification</button>
+        <button class="btn btn-primary" ng-click="successNotification()">Success notification</button>
       </div>
     </div>
   </div>
 </div>
+
+<toaster-container toaster-options="{'time-out': 0}"></toaster-container>
